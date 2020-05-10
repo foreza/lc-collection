@@ -34,35 +34,14 @@ var mergeTwoLists = function (l1, l2) {
     }
 
     if (l1 == null) {
-        while (l2 != null){
-            cursor.val = l2.val;
-            l2 = l2.next;
-
-            if (l2 != null) {
-                cursor.next = {};
-                cursor = cursor.next;
-            } else {
-                cursor.next = null;
-            }
-        }
+        cursor.val = l2.val;
+        cursor.next = l2.next;
     }
 
     if (l2 == null) {
-        while (l1 != null){
-            cursor.val = l1.val;
-            l1 = l1.next;
-
-            if (l1 != null) {
-                cursor.next = {};
-                cursor = cursor.next;
-            } else {
-                cursor.next = null;
-            }
-
-        }
-
+        cursor.val = l1.val;
+        cursor.next = l1.next;
     }
-
 
     return newList;
 };
