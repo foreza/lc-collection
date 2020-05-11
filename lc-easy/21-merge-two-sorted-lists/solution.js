@@ -10,6 +10,38 @@
  * @param {ListNode} l2
  * @return {ListNode}
  */
-var mergeTwoLists = function(l1, l2) {
-    
+var mergeTwoLists = function (l1, l2) {
+
+    let newList = {};
+    let cursor = newList;
+
+    if (l1 == null && l2 == null) { return null; }
+    if (l1 != null && l2 == null) { return l1; }
+    if (l1 == null && l2 != null) { return l2; }
+
+    while (l1 != null && l2 != null) {
+
+        if (l1.val < l2.val) {
+            cursor.val = l1.val;
+            l1 = l1.next;
+        } else {
+            cursor.val = l2.val;
+            l2 = l2.next;
+        }
+
+        cursor.next = {};
+        cursor = cursor.next;
+    }
+
+    if (l1 == null) {
+        cursor.val = l2.val;
+        cursor.next = l2.next;
+    }
+
+    if (l2 == null) {
+        cursor.val = l1.val;
+        cursor.next = l1.next;
+    }
+
+    return newList;
 };
