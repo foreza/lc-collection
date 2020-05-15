@@ -8,11 +8,10 @@ var countAndSay = function(n) {
         return "1";
     }
     
-    else return countStuff()
+    else {
+        return countStuff(countAndSay(n-1))
+    }
 
-    
-    
-    
     
 };
 
