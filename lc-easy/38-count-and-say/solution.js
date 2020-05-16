@@ -4,15 +4,9 @@
  */
 var countAndSay = function(n) {
   
-    if (n == 1) {
-        return "1";
+    if (n == 1) { return "1"; }
+    else { return countStuff(countAndSay(n-1));
     }
-    
-    else {
-        return countStuff(countAndSay(n-1))
-    }
-
-    
 };
 
 
